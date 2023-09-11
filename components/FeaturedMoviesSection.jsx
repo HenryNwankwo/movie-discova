@@ -15,7 +15,16 @@ function FeaturedMoviesSection() {
           See more <FaChevronRight className='text-lg ml-1' />
         </Link>
       </div>
-      <MovieCard></MovieCard>
+      <div className='mbox-movies-card-group'>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+        <MovieCard></MovieCard>
+      </div>
     </section>
   );
 }
