@@ -3,11 +3,33 @@
 @tailwind utilities;
 
 /* ==================================
+==== HERO SECTION STYLES====
+===================================*/
+.mbox-hero-section {
+  @apply w-full px-5 sm:px-8;
+}
+.mbox-hero-title {
+  @apply text-3xl md:text-5xl font-bold my-3;
+}
+.mbox-hero-movie-rating {
+  @apply flex my-2;
+}
+.mbox-hero-movie-description {
+  @apply my-2.5 text-sm font-medium;
+}
+.mbox-hero-featured-movie {
+  @apply w-full flex flex-col sm:w-3/5 md:w-2/5;
+}
+.mbox-hero-btn {
+  @apply text-white w-full sm:w-fit flex items-center justify-center font-medium my-4 md:my-6 py-2.5 px-6 rounded-lg bg-pink-600 hover:bg-pink-500;
+}
+
+/* ==================================
 ====FEATURED MOVIE SECTION STYLES====
 ===================================*/
 
 .mbox-movies-section {
-  @apply py-3 px-1 sm:px-5 w-full;
+  @apply py-3 pt-10 px-1 sm:px-5 w-full;
 }
 .mbox-movies-section-head {
   @apply w-full px-5 py-2 sm:flex sm:flex-row justify-between;
