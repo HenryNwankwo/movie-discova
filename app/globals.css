@@ -2,35 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 /* ==================================
 ====FEATURED MOVIE SECTION STYLES====
 ===================================*/
 
 .mbox-movies-section {
   @apply py-3 px-5 w-full;
+}
+.mbox-movies-section-head {
+  @apply w-full py-2 sm:flex sm:flex-row justify-between;
 }
 
 /* ==================
@@ -41,13 +21,13 @@ body {
   @apply flex flex-col justify-center items-center p-2 w-full h-auto;
 }
 .mbox-footer > * {
-  @apply py-2;
+  @apply py-2 mb-5;
 }
 .mbox-foot-links {
   @apply flex flex-col justify-center items-center md:flex-row;
 }
 .mbox-foot-links > * {
-  @apply mx-3 my-1 md:my-0 font-bold hover:text-neutral-700 hover:underline;
+  @apply mx-3 my-1 md:my-0 font-bold hover:text-neutral-700 hover:underline text-center w-full;
 }
 .mbox-copyright {
   @apply text-neutral-600 font-semibold flex items-center justify-center text-center;
