@@ -1,3 +1,4 @@
+import FeaturedMoviesSection from '@/components/FeaturedMoviesSection';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 
@@ -7,7 +8,7 @@ export default function Home() {
       <section className='hero-section'>
         <header></header>
       </section>
-      <section className='featured-movies-section'></section>
+      <FeaturedMoviesSection></FeaturedMoviesSection>
       <Footer></Footer>
     </main>
   );

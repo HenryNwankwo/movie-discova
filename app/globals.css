@@ -25,6 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* ==================================
+====FEATURED MOVIE SECTION STYLES====
+===================================*/
+
+.mbox-movies-section {
+  @apply py-3 px-5 w-full;
+}
 
 /* ==================
 ====FOOTER STYLES====
