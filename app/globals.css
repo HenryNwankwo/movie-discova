@@ -7,10 +7,49 @@
 ===================================*/
 
 .mbox-movies-section {
-  @apply py-3 px-5 w-full;
+  @apply py-3 px-1 sm:px-5 w-full;
 }
 .mbox-movies-section-head {
-  @apply w-full py-2 sm:flex sm:flex-row justify-between;
+  @apply w-full px-5 py-2 sm:flex sm:flex-row justify-between;
+}
+
+/* =============================
+==== MOVIE CARD GROUP STYLES====
+==============================*/
+.mbox-movies-card-group {
+  @apply my-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center;
+}
+.mbox-movies-card-group > * + * {
+  @apply ml-1 md:ml-2;
+}
+
+/* =======================
+==== MOVIE CARD STYLES====
+========================*/
+
+.mbox-movie-card {
+  @apply bg-white w-[110px] h-[358px] sm:w-[220px] sm:h-[416px] my-4 relative;
+}
+.mbox-movie-image {
+  @apply w-full h-[155px] sm:h-[250px];
+}
+.mbox-movie-year {
+  @apply text-neutral-400 font-medium text-xs py-2;
+}
+.mbox-movie-title {
+  @apply text-xs sm:text-base font-bold my-1.5;
+}
+.mbox-movie-ratings {
+  @apply flex flex-col sm:flex-row sm:justify-between sm:items-center font-medium text-xs my-3;
+}
+.mbox-movie-tags {
+  @apply text-neutral-400 text-xs font-medium my-2;
+}
+.mbox-movie-category {
+  @apply px-1.5 py-1 rounded-full text-xs bg-white bg-opacity-30 absolute left-1 sm:left-3 sm:top-3 top-2.5;
+}
+.mbox-movie-favourite {
+  @apply p-1 rounded-full bg-white bg-opacity-30 absolute right-1 sm:right-3 top-2 sm:top-3;
 }
 
 /* ==================
@@ -27,7 +66,7 @@
   @apply flex flex-col justify-center items-center md:flex-row;
 }
 .mbox-foot-links > * {
-  @apply mx-3 my-1 md:my-0 font-bold hover:text-neutral-700 hover:underline text-center w-full;
+  @apply mx-3 my-1 md:my-0 font-bold hover:text-neutral-700 hover:underline text-center;
 }
 .mbox-copyright {
   @apply text-neutral-600 font-semibold flex items-center justify-center text-center;
