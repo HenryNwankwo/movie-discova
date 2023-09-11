@@ -25,3 +25,37 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* ==================
+====FOOTER STYLES====
+===================*/
+
+.mbox-footer {
+  @apply flex flex-col justify-center items-center p-2 w-full h-auto;
+}
+.mbox-footer > * {
+  @apply py-2;
+}
+.mbox-foot-links {
+  @apply flex flex-col justify-center items-center md:flex-row;
+}
+.mbox-foot-links > * {
+  @apply mx-3 my-1 md:my-0 font-bold hover:text-neutral-700 hover:underline;
+}
+.mbox-copyright {
+  @apply text-neutral-600 font-semibold flex items-center justify-center text-center;
+}
+.mbox-copyright,
+.mbox-foot-links {
+  @apply mt-3;
+}
+
+.mbox-social-links {
+  @apply flex items-center justify-center;
+}
+.mbox-social-links > * {
+  @apply w-fit mx-3;
+}
+.mbox-social-icons {
+  @apply text-3xl hover:text-neutral-700;
+}
