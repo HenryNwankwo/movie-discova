@@ -1,11 +1,33 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BiSearch } from 'react-icons/bi';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 
 export default function Header() {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY > 100) {
+        setScrolling((prev) => (prev === false ? true : prev));
+      } else {
+        setScrolling((prev) => (prev === true ? false : prev));
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
   return (
-    <header className='mbox-header'>
+    <header
+      className={`mbox-header ${scrolling ? 'mbox-header-scroll' : null}`}
+    >
       <article className='mbox-logo-group'>
         <Image
           src='./assets/Logo.svg'
