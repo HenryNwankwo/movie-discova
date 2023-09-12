@@ -2,23 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ==================================
+/* ===========================
+==== HEADER SECTION STYLES====
+============================*/
+
+.mbox-header {
+  @apply fixed left-0 top-0 w-full h-20 flex items-center justify-between bg-transparent bg-opacity-30 z-50 px-16;
+}
+
+.mbox-logo-group {
+  @apply flex font-semibold items-center p-3;
+}
+.mbox-search-group > * {
+  @apply flex items-center justify-center text-white w-96;
+}
+.mbox-search-input {
+  @apply flex items-center w-full rounded bg-transparent py-1 px-3 pr-10 outline-2 outline outline-white;
+}
+.mbox-search-input::placeholder {
+  @apply text-white text-sm;
+}
+.mbox-search-input-label {
+  @apply flex items-center justify-center -m-7;
+}
+.mbox-sign-in-group {
+  @apply flex items-center justify-center text-white;
+}
+.mbox-sign-in-link {
+  @apply text-sm px-2 mr-2 font-medium;
+}
+.mbox-menu-burger {
+  @apply p-1.5 rounded-full bg-pink-600;
+}
+
+/* =========================
 ==== HERO SECTION STYLES====
-===================================*/
+==========================*/
+
 .mbox-hero-section {
-  @apply w-full px-5 sm:px-8;
+  @apply w-full px-5 sm:px-8 lg:px-16 bg-[url("/assets/hero-poster.png")] bg-no-repeat bg-center bg-cover relative py-28 pt-40;
 }
 .mbox-hero-title {
-  @apply text-3xl md:text-5xl font-bold my-3;
+  @apply text-3xl md:text-5xl font-semibold mb-2;
 }
 .mbox-hero-movie-rating {
-  @apply flex my-2;
+  @apply flex my-3;
 }
 .mbox-hero-movie-description {
   @apply my-2.5 text-sm font-medium;
 }
 .mbox-hero-featured-movie {
-  @apply w-full flex flex-col sm:w-3/5 md:w-2/5;
+  @apply w-full flex flex-col sm:w-3/5 md:w-2/5 text-white;
 }
 .mbox-hero-btn {
   @apply text-white w-full sm:w-fit flex items-center justify-center font-medium my-4 md:my-6 py-2.5 px-6 rounded-lg bg-pink-600 hover:bg-pink-500;
@@ -32,14 +66,14 @@
   @apply py-3 pt-10 px-1 sm:px-5 w-full;
 }
 .mbox-movies-section-head {
-  @apply w-full px-5 py-2 sm:flex sm:flex-row justify-between;
+  @apply w-full px-5 lg:px-16  py-2 sm:flex sm:flex-row justify-between;
 }
 
 /* =============================
 ==== MOVIE CARD GROUP STYLES====
 ==============================*/
 .mbox-movies-card-group {
-  @apply my-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center;
+  @apply my-8 lg:px-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center;
 }
 .mbox-movies-card-group > * + * {
   @apply ml-1 md:ml-2;

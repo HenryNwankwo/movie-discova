@@ -1,15 +1,13 @@
 import { FaCirclePlay } from 'react-icons/fa6';
-import Header from './Header';
 import Image from 'next/image';
 
 function HeroSection() {
   return (
     <section className='mbox-hero-section'>
-      <Header></Header>
       <article className='mbox-hero-featured-movie'>
         <h1 className='mbox-hero-title'>John Wick 3: Parabellum</h1>
         <div className='mbox-hero-movie-rating'>
-          <p className='flex items-center mr-5'>
+          <p className='flex items-center mr-5 font-semibold'>
             <Image
               src='./assets/imdb.svg'
               alt='imdb image'
@@ -19,7 +17,7 @@ function HeroSection() {
             />{' '}
             79.0/100
           </p>
-          <p className='flex items-center'>
+          <p className='flex items-center font-semibold'>
             <Image
               src='./assets/tomato.svg'
               alt=''

@@ -8,13 +8,12 @@ export default function Header() {
     <header className='mbox-header'>
       <article className='mbox-logo-group'>
         <Image
-          src=''
+          src='./assets/Logo.svg'
           alt='MovieBox Logo'
-          width={100}
-          height={100}
-          className='mr-3'
+          width={150}
+          height={150}
+          className=''
         />
-        MovieBox
       </article>
       <article className='mbox-search-group'>
         <form action=''>
@@ -22,16 +21,16 @@ export default function Header() {
             type='text'
             name='search'
             id='search'
-            className=''
+            className='mbox-search-input'
             placeholder='What do you want to watch?'
           />
-          <label htmlFor='search'>
+          <label htmlFor='search' className='mbox-search-input-label'>
             {' '}
             <BiSearch className='text-lg' />{' '}
           </label>
         </form>
       </article>
-      <article>
+      <article className='mbox-sign-in-group'>
         <Link href='#' className='mbox-sign-in-link'>
           Sign in
         </Link>
