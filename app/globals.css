@@ -155,3 +155,26 @@
 /*******************************************************************************
 ********************* START OF MOVIES PAGE STYLES ******************************
 *******************************************************************************/
+
+.movies-page-aside {
+  @apply w-48 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 min-h-screen py-5;
+}
+.movies-page-logo-group {
+  @apply flex w-full px-4;
+}
+.movies-page-nav {
+  @apply py-3 my-2 mb-4;
+}
+.nav-links {
+  @apply flex items-center px-8 py-6 text-sm font-semibold text-neutral-500 hover:bg-pink-100 hover:text-pink-600 hover:border-r-4 hover:border-pink-600;
+}
+
+.movies-page-quiz-group {
+  @apply rounded-xl w-5/6 mx-auto h-auto px-3 p-2 my-2 flex flex-col bg-pink-50 border-2 border-pink-200;
+}
+.quiz-btn {
+  @apply w-fit mx-auto px-4 py-2 mt-2 justify-self-center  text-pink-600 bg-pink-200 rounded-full text-xs font-semibold;
+}
+.logout-btn {
+  @apply w-full;
+}
