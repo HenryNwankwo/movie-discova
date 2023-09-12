@@ -156,11 +156,22 @@
 ********************* START OF MOVIES PAGE STYLES ******************************
 *******************************************************************************/
 
+.movies-page-container {
+  @apply flex;
+}
+.movies-page-main {
+  @apply w-10/12 p-4;
+}
+
+/* ==================
+====ASIDE STYLES====
+===================*/
+
 .movies-page-aside {
-  @apply w-48 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 min-h-screen py-5;
+  @apply w-2/12 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 min-h-screen py-5;
 }
 .movies-page-logo-group {
-  @apply flex w-full px-4;
+  @apply flex items-center w-full px-4;
 }
 .movies-page-nav {
   @apply py-3 my-2 mb-4;
@@ -177,4 +188,33 @@
 }
 .logout-btn {
   @apply w-full;
+}
+
+/* =============================
+==== MAIN MOVIES PAGE STYLES====
+==============================*/
+
+.movie-info-group {
+  @apply w-full flex justify-between text-neutral-800 text-sm font-semibold px-2 py-1;
+}
+.movie-info-group > span {
+  @apply block;
+}
+.small-dot {
+  @apply block w-1.5 h-1.5 mx-3 rounded-full bg-neutral-800;
+}
+.movie-info {
+  @apply flex items-center;
+}
+.category-tag {
+  @apply w-fit rounded-full text-xs mx-1.5 px-3 py-1 border-[1px] border-pink-600 text-pink-600;
+}
+.movie-rating {
+  @apply flex;
+}
+.movie-description-group {
+  @apply text-sm my-2 p-3 text-neutral-600;
+}
+.names-group {
+  @apply flex my-6;
 }

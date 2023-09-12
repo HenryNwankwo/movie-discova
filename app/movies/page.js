@@ -2,6 +2,7 @@ import Image from 'next/image';
 import AsideHeader from '@/components/AsideHeader';
 import AsideNav from '@/components/AsideNav';
 import AsideQuiz from '@/components/AsideQuiz';
+import MovieInfoGroup from '@/components/MovieInfoGroup';
 
 function page() {
   return (
@@ -21,7 +22,10 @@ function page() {
           <span>Log out</span>
         </button>
       </aside>
-      <section className='movies-page-main'>This is the main section</section>
+      <section className='movies-page-main'>
+        <article></article>
+        <MovieInfoGroup></MovieInfoGroup>
+      </section>
     </main>
   );
 }

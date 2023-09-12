@@ -6,9 +6,9 @@ function AsideHeader() {
       <Image
         src={'./assets/tv.svg'}
         alt='MovieBox Logo'
-        width={100}
-        height={100}
-        className='mr-2'
+        width={30}
+        height={30}
+        className='mr-3'
       />{' '}
       <span className='font-semibold text-lg'>MovieBox</span>
     </header>
