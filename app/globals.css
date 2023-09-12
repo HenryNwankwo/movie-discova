@@ -212,9 +212,15 @@
 .movie-rating {
   @apply flex;
 }
+.movie-description-ad-group {
+  @apply flex;
+}
 .movie-description-group {
-  @apply text-sm my-2 p-3 text-neutral-600;
+  @apply text-sm my-2 p-3 text-neutral-600 w-8/12;
 }
 .names-group {
   @apply flex my-6;
+}
+.movie-ad-group {
+  @apply w-72 h-72 px-2 lg:ml-4;
 }

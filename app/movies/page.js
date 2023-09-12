@@ -4,6 +4,8 @@ import AsideNav from '@/components/AsideNav';
 import AsideQuiz from '@/components/AsideQuiz';
 import MovieInfoGroup from '@/components/MovieInfoGroup';
 import MovieCast from '@/components/MovieCast';
+import MoviePreview from '@/components/MoviePreview';
+
 
 function page() {
   return (
@@ -24,7 +26,7 @@ function page() {
         </button>
       </aside>
       <section className='movies-page-main'>
-        <article></article>
+        <MoviePreview></MoviePreview>
         <MovieInfoGroup></MovieInfoGroup>
         <MovieCast></MovieCast>
       </section>
