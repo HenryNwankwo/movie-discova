@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BiSearch } from 'react-icons/bi';
@@ -7,7 +7,25 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 
 export default function Header() {
   const [scrolling, setScrolling] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const headerNavRef = useRef(null);
+  const menuRef = useRef(null);
 
+  // on click outside
+  useEffect(() => {
+    const clickOutsideHandler = (e) => {
+      if (headerNavRef.current && !headerNavRef.current.contains(e.target)) {
+        setMenuOpen((prev) => (prev === true ? false : prev));
+      }
+    };
+    window.addEventListener('mousedown', clickOutsideHandler);
+
+    return () => {
+      window.removeEventListener('mousedown', clickOutsideHandler);
+    };
+  }, []);
+
+  // Checking if user is scrolling
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > 100) {
@@ -24,6 +42,11 @@ export default function Header() {
     };
   }, []);
 
+  const menuHandler = () => {
+    setMenuOpen((prev) => !prev);
+    console.log(menuOpen);
+  };
+
   return (
     <header
       className={`mbox-header ${scrolling ? 'mbox-header-scroll' : null}`}
@@ -37,29 +60,41 @@ export default function Header() {
           className=''
         />
       </article>
-      <article className='mbox-search-group'>
-        <form action=''>
-          <input
-            type='text'
-            name='search'
-            id='search'
-            className='mbox-search-input'
-            placeholder='What do you want to watch?'
-          />
-          <label htmlFor='search' className='mbox-search-input-label'>
-            {' '}
-            <BiSearch className='text-lg' />{' '}
-          </label>
-        </form>
-      </article>
-      <article className='mbox-sign-in-group'>
-        <Link href='#' className='mbox-sign-in-link'>
-          Sign in
-        </Link>
-        <div className='mbox-menu-burger'>
-          <HiOutlineMenuAlt4 className='text-lg' />
-        </div>
-      </article>
+      <nav
+        className={`mbox-search-sign-in-group ${menuOpen ? 'flex' : 'hidden'}`}
+        ref={headerNavRef}
+      >
+        <article className='mbox-search-group'>
+          <form action='' className='mbox-search-form'>
+            <input
+              type='text'
+              name='search'
+              id='search'
+              className='mbox-search-input'
+              placeholder='What do you want to watch?'
+            />
+            <label htmlFor='search' className='mbox-search-input-label'>
+              {' '}
+              <BiSearch className='text-lg' />{' '}
+            </label>
+          </form>
+        </article>
+        <article className='mbox-sign-in-group'>
+          <Link href='#' className='mbox-sign-in-link'>
+            Sign in
+          </Link>
+          <div className='mbox-menu-burger'>
+            <HiOutlineMenuAlt4 className='text-lg' />
+          </div>
+        </article>
+      </nav>
+      <div
+        className='mbox-menu-burger text-white sm:hidden'
+        onClick={menuHandler}
+        ref={menuRef}
+      >
+        <HiOutlineMenuAlt4 className='text-lg' />
+      </div>
     </header>
   );
 }

@@ -7,7 +7,7 @@
 ============================*/
 
 .mbox-header {
-  @apply fixed left-0 top-0 w-full h-20 flex items-center justify-between bg-transparent bg-opacity-30 z-50 px-16;
+  @apply fixed left-0 top-0 w-full h-20 flex items-center justify-between bg-transparent bg-opacity-30 z-50 px-5 sm:px-7 lg:px-16;
 }
 .mbox-header-scroll {
   @apply bg-blue-900 bg-opacity-50 backdrop-blur-sm;
@@ -15,11 +15,15 @@
 .mbox-logo-group {
   @apply flex font-semibold items-center p-3;
 }
+.mbox-search-sign-in-group {
+  @apply sm:flex flex-col sm:flex-row items-center justify-center w-full absolute sm:relative top-20 sm:top-0 left-0 px-2 py-8 sm:px-0 sm:py-0 h-auto bg-blue-900 bg-opacity-40 sm:bg-none sm:bg-opacity-0 backdrop-blur-sm sm:backdrop-blur-none;
+}
+
 .mbox-search-group > * {
-  @apply flex items-center justify-center text-white w-96;
+  @apply flex items-center justify-center text-white w-full sm:w-64 md:w-80 lg:w-96 sm:mr-9 md:mr-20 lg:mr-40;
 }
 .mbox-search-input {
-  @apply flex items-center w-full rounded bg-transparent py-1 px-3 pr-10 outline-2 outline outline-white;
+  @apply flex items-center w-full rounded bg-transparent py-1 px-3 pr-10 outline-2 outline outline-white -ml-10;
 }
 .mbox-search-input::placeholder {
   @apply text-white text-sm;
@@ -28,7 +32,7 @@
   @apply flex items-center justify-center -m-7;
 }
 .mbox-sign-in-group {
-  @apply flex items-center justify-center text-white;
+  @apply flex items-center justify-center text-white mt-5 sm:mt-0;
 }
 .mbox-sign-in-link {
   @apply text-sm px-2 mr-2 font-medium;
