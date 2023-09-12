@@ -3,6 +3,7 @@ import AsideHeader from '@/components/AsideHeader';
 import AsideNav from '@/components/AsideNav';
 import AsideQuiz from '@/components/AsideQuiz';
 import MovieInfoGroup from '@/components/MovieInfoGroup';
+import MovieCast from '@/components/MovieCast';
 
 function page() {
   return (
@@ -25,6 +26,7 @@ function page() {
       <section className='movies-page-main'>
         <article></article>
         <MovieInfoGroup></MovieInfoGroup>
+        <MovieCast></MovieCast>
       </section>
     </main>
   );
