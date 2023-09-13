@@ -1,23 +1,27 @@
 import Image from 'next/image';
 import { MdFavorite } from 'react-icons/md';
 
-function MovieCard() {
+function MovieCard({ poster, release_date, title }) {
+  const movie_release_date = new Date(release_date).getFullYear();
   return (
-    <article className='mbox-movie-card'>
+    <article data-testid='movie-card' className='mbox-movie-card'>
       <p className='mbox-movie-category'>TV Series</p>
       <button className='mbox-movie-favourite'>
         <MdFavorite className='text-white text-lg' />
       </button>
       <Image
-        src=''
+        src={poster}
         alt=''
-        width={100}
-        height={100}
-        className='mbox-movie-image'
+        width={250}
+        height={250}
+        data-testid='movie-poster'
+        className=''
       />
-      <h6 className='mbox-movie-year'>USA, 2021</h6>
-      <p className='mbox-movie-title'>
-        Shang-Chi and the legend of the ten rings
+      <h6 data-testid='movie-release-date' className='mbox-movie-year'>
+        {movie_release_date}
+      </h6>
+      <p data-testid='movie-title' className='mbox-movie-title'>
+        {title}
       </p>
       <div className='mbox-movie-ratings'>
         <p className='flex items-center'>

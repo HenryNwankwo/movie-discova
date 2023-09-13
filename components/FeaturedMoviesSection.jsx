@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieCard from './MovieCard';
+
+import MovieCardGroup from './MovieCardGroup';
 import { FaChevronRight } from 'react-icons/fa6';
 import Link from 'next/link';
 
@@ -15,16 +16,7 @@ function FeaturedMoviesSection() {
           See more <FaChevronRight className='text-lg ml-1' />
         </Link>
       </div>
-      <div className='mbox-movies-card-group'>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-        <MovieCard></MovieCard>
-      </div>
+      <MovieCardGroup></MovieCardGroup>
     </section>
   );
 }

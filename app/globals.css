@@ -94,10 +94,10 @@
 ========================*/
 
 .mbox-movie-card {
-  @apply bg-white w-[110px] h-[358px] sm:w-[220px] sm:h-[416px] my-4 relative;
+  @apply bg-white w-[110px] h-auto sm:w-[220px] my-4 relative;
 }
 .mbox-movie-image {
-  @apply w-full h-[155px] sm:h-[250px];
+  @apply w-full h-60 sm:h-[250px];
 }
 .mbox-movie-year {
   @apply text-neutral-400 font-medium text-xs py-2;
