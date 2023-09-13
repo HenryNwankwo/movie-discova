@@ -13,8 +13,7 @@ function MovieCardGroup() {
       try {
         const resp = await axios.get(URL);
         setTopMovies(resp.data.results.slice(0, 10));
-        console.log(resp.data);
-        console.log('This is top movies', topMovies);
+        
       } catch (error) {
         console.error('Error occured!');
       }
@@ -27,6 +26,7 @@ function MovieCardGroup() {
       {topMovies.map((movie) => (
         <MovieCard
           key={movie.id}
+          id={movie.id}
           poster={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           title={movie.title}
           release_date={movie.release_date}

@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import FavBtn from './FavBtn';
 
-function MovieCard({ poster, release_date, title }) {
+function MovieCard({ id, poster, release_date, title }) {
   const movie_release_date = new Date(release_date).getFullYear();
   return (
     <article data-testid='movie-card' className='mbox-movie-card'>
@@ -18,9 +19,16 @@ function MovieCard({ poster, release_date, title }) {
       <h6 data-testid='movie-release-date' className='mbox-movie-year'>
         {movie_release_date}
       </h6>
-      <p data-testid='movie-title' className='mbox-movie-title'>
-        {title}
-      </p>
+      <Link
+        href={{
+          pathname: '/movies',
+          query: { id: id },
+        }}
+      >
+        <p data-testid='movie-title' className='mbox-movie-title'>
+          {title}
+        </p>
+      </Link>
       <div className='mbox-movie-ratings'>
         <p className='flex items-center'>
           <Image

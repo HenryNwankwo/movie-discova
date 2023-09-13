@@ -4,7 +4,7 @@ import Link from 'next/link';
 function AsideNav() {
   return (
     <nav className='movies-page-nav'>
-      <Link href='#' className='nav-links'>
+      <Link href='/' className='nav-links'>
         <Image
           src={'/assets/Home.svg'}
           height={25}

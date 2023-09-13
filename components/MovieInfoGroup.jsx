@@ -1,15 +1,21 @@
 import { BsStarFill } from 'react-icons/bs';
-function MovieInfoGroup() {
+function MovieInfoGroup({ movieDetails }) {
+  const release_date = new Date(movieDetails.release_date).getFullYear();
+  const genres = movieDetails.genre;
   return (
     <article className='movie-info-group'>
       <p className='movie-info'>
-        Top Gun: Maverick
+        <span data-testid='movie-title'>{movieDetails.title}</span>
         <span className='small-dot'></span>
-        <span className=''>2022</span>
+        <span data-testid='movie-release-date' className=''>
+          {release_date.toString()}
+        </span>
         <span className='small-dot'></span>
         <span className=''>PG - 13</span>
         <span className='small-dot'></span>
-        <span className='block mr-6'>2h 10m</span>
+        <span data-testid='movie-runtime' className='block mr-6'>
+          {movieDetails.runtime}
+        </span>
         <span className='category-tag'>Action</span>
         <span className='category-tag'>Drama</span>
       </p>

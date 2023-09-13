@@ -2,10 +2,7 @@ import Image from 'next/image';
 import AsideHeader from '@/components/AsideHeader';
 import AsideNav from '@/components/AsideNav';
 import AsideQuiz from '@/components/AsideQuiz';
-import MovieInfoGroup from '@/components/MovieInfoGroup';
-import MovieCast from '@/components/MovieCast';
-import MoviePreview from '@/components/MoviePreview';
-
+import MoviesMainPage from '@/components/MoviesMainPage';
 
 function page() {
   return (
@@ -25,11 +22,7 @@ function page() {
           <span>Log out</span>
         </button>
       </aside>
-      <section className='movies-page-main'>
-        <MoviePreview></MoviePreview>
-        <MovieInfoGroup></MovieInfoGroup>
-        <MovieCast></MovieCast>
-      </section>
+      <MoviesMainPage></MoviesMainPage>
     </main>
   );
 }

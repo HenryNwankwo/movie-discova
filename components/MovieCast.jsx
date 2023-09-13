@@ -1,16 +1,11 @@
 import Image from 'next/image';
 import { BsChevronDown, BsListUl } from 'react-icons/bs';
 
-function MovieCast() {
+function MovieCast({ movieDetails }) {
   return (
     <article className='movie-description-ad-group'>
       <article className='movie-description-group'>
-        <p>
-          After thirty years, Maverick is still pushing the envelope as a top
-          naval aviator, but must confront ghosts of his past when he leads TOP
-          GUN's elite graduates on a mission that demands the ultimate sacrifice
-          from those chosen to fly it.
-        </p>
+        <p data-testid='movie-overview'>{movieDetails.overview}</p>
         <p className='names-group'>
           Director :
           <span className='block ml-1 text-pink-600'>Joseph Kosinski</span>{' '}
