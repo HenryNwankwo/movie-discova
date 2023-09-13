@@ -19,12 +19,7 @@ function MovieCard({ id, poster, release_date, title }) {
       <h6 data-testid='movie-release-date' className='mbox-movie-year'>
         {movie_release_date}
       </h6>
-      <Link
-        href={{
-          pathname: '/movies',
-          query: { id: id },
-        }}
-      >
+      <Link href={`/movies/${id}`}>
         <p data-testid='movie-title' className='mbox-movie-title'>
           {title}
         </p>
