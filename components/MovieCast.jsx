@@ -28,10 +28,8 @@ function MovieCast() {
           </span>
         </p>
         <div className='flex items-center justify-between'>
-          <button className='p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white'>
-            Top rated movie #65
-          </button>
-          <button className='flex item-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4'>
+          <button className='top-rated-btn'>Top rated movie #65</button>
+          <button className='award-nomination-btn'>
             Awards 9 nomination
             <BsChevronDown className='ml-2 text-lg' />
           </button>

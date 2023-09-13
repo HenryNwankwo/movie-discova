@@ -224,3 +224,22 @@
 .movie-ad-group {
   @apply w-72 h-72 px-2 lg:ml-4;
 }
+.top-rated-btn {
+  @apply p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white;
+}
+.award-nomination-btn {
+  @apply flex items-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4;
+}
+
+.movie-preview-group {
+  @apply w-full h-auto flex items-center justify-center relative my-4;
+}
+.watch-trailer-group {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col text-white items-center justify-center;
+}
+.trailer-play-btn {
+  @apply bg-white bg-opacity-30 flex items-center justify-center w-20 h-20 rounded-full;
+}
+.trailer-image {
+  @apply rounded-3xl w-full h-96 flex justify-center items-center;
+}
