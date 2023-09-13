@@ -1,14 +1,12 @@
 import Image from 'next/image';
-import { MdFavorite } from 'react-icons/md';
+import FavBtn from './FavBtn';
 
 function MovieCard({ poster, release_date, title }) {
   const movie_release_date = new Date(release_date).getFullYear();
   return (
     <article data-testid='movie-card' className='mbox-movie-card'>
       <p className='mbox-movie-category'>TV Series</p>
-      <button className='mbox-movie-favourite'>
-        <MdFavorite className='text-white text-lg' />
-      </button>
+      <FavBtn></FavBtn>
       <Image
         src={poster}
         alt=''
