@@ -157,10 +157,10 @@
 *******************************************************************************/
 
 .movies-page-container {
-  @apply flex;
+  @apply flex max-w-[100vw];
 }
 .movies-page-main {
-  @apply w-10/12 p-4;
+  @apply w-full p-4 pl-52;
 }
 
 /* ==================
@@ -168,16 +168,16 @@
 ===================*/
 
 .movies-page-aside {
-  @apply w-2/12 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 min-h-screen py-5;
+  @apply w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed;
 }
 .movies-page-logo-group {
   @apply flex items-center w-full px-4;
 }
 .movies-page-nav {
-  @apply py-3 my-2 mb-4;
+  @apply py-3 my-2 mb-3;
 }
 .nav-links {
-  @apply flex items-center px-8 py-6 text-sm font-semibold text-neutral-500 hover:bg-pink-100 hover:text-pink-600 hover:border-r-4 hover:border-pink-600;
+  @apply flex items-center px-8 py-4 text-sm font-semibold text-neutral-500 hover:bg-pink-100 hover:text-pink-600 hover:border-r-4 hover:border-pink-600;
 }
 
 .movies-page-quiz-group {
