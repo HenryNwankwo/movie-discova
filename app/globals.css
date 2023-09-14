@@ -20,7 +20,7 @@
   @apply flex font-semibold items-center p-3;
 }
 .mbox-search-sign-in-group {
-  @apply sm:flex flex-col sm:flex-row items-center justify-center w-full absolute sm:relative top-20 sm:top-0 left-0 px-2 py-8 sm:px-0 sm:py-0 h-auto bg-blue-900 bg-opacity-40 sm:bg-none sm:bg-opacity-0 backdrop-blur-sm sm:backdrop-blur-none;
+  @apply sm:flex flex-col sm:flex-row items-center justify-between w-full absolute sm:relative top-20 sm:top-0 left-0 px-2 py-8 sm:px-0 sm:pl-10 md:pl-20 lg:pl-24 sm:py-0 h-auto bg-blue-900 bg-opacity-40 sm:bg-none sm:bg-opacity-0 backdrop-blur-sm sm:backdrop-blur-none;
 }
 
 .mbox-search-group > * {

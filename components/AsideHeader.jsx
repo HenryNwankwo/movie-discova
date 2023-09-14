@@ -6,7 +6,7 @@ function AsideHeader() {
     <header className='movies-page-logo-group'>
       <Link href='/' className='flex items-center justify-center'>
         <Image
-          src={'./assets/tv.svg'}
+          src={'/assets/tv.png'}
           alt='MovieBox Logo'
           width={30}
           height={30}

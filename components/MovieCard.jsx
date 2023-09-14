@@ -19,7 +19,10 @@ function MovieCard({ id, poster, release_date, title }) {
       <h6 data-testid='movie-release-date' className='mbox-movie-year'>
         {movie_release_date}
       </h6>
-      <Link href={`/movies/${id}`}>
+      <Link
+        href={`/movies/${id}`}
+        className='hover:underline hover:text-blue-600'
+      >
         <p data-testid='movie-title' className='mbox-movie-title'>
           {title}
         </p>

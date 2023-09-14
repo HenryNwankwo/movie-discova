@@ -73,10 +73,9 @@ export default function Header() {
               className='mbox-search-input'
               placeholder='What do you want to watch?'
             />
-            <label htmlFor='search' className='mbox-search-input-label'>
-              {' '}
+            <button className='mbox-search-input-label'>
               <BiSearch className='text-lg' />{' '}
-            </label>
+            </button>
           </form>
         </article>
         <article className='mbox-sign-in-group'>
