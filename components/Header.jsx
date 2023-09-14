@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BiSearch } from 'react-icons/bi';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
+import SearchBox from './SearchBox';
 
 export default function Header() {
   const [scrolling, setScrolling] = useState(false);
@@ -64,20 +64,7 @@ export default function Header() {
         className={`mbox-search-sign-in-group ${menuOpen ? 'flex' : 'hidden'}`}
         ref={headerNavRef}
       >
-        <article className='mbox-search-group'>
-          <form action='' className='mbox-search-form'>
-            <input
-              type='text'
-              name='search'
-              id='search'
-              className='mbox-search-input'
-              placeholder='What do you want to watch?'
-            />
-            <button className='mbox-search-input-label'>
-              <BiSearch className='text-lg' />{' '}
-            </button>
-          </form>
-        </article>
+        <SearchBox></SearchBox>
         <article className='mbox-sign-in-group'>
           <Link href='#' className='mbox-sign-in-link'>
             Sign in
