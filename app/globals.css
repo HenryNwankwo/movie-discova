@@ -11,7 +11,7 @@
 ============================*/
 
 .mbox-header {
-  @apply fixed left-0 top-0 w-full h-20 flex items-center justify-between bg-transparent bg-opacity-30 z-50 px-5 sm:px-7 lg:px-16;
+  @apply fixed top-0 w-full max-w-6xl h-20 flex items-center justify-between bg-transparent bg-opacity-30 z-50 px-5 sm:px-7 lg:px-16;
 }
 .mbox-header-scroll {
   @apply bg-blue-900 bg-opacity-50 backdrop-blur-sm;
@@ -163,10 +163,10 @@
 *******************************************************************************/
 
 .movies-page-container {
-  @apply flex max-w-[100vw] max-h-screen overflow-y-scroll;
+  @apply flex max-w-6xl max-h-screen overflow-y-scroll mx-auto;
 }
 .movies-page-main {
-  @apply w-full h-auto p-4 pl-14 lg:pl-52;
+  @apply w-full max-w-6xl h-auto p-4 pl-14 lg:pl-56;
 }
 
 /* ==================
@@ -174,7 +174,7 @@
 ===================*/
 
 .movies-page-aside {
-  @apply w-12 lg:w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed overflow-y-auto;
+  @apply w-12 lg:w-2/12 max-w-[13rem] bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed overflow-y-auto;
 }
 .movies-page-logo-group {
   @apply flex items-center w-full px-4;

@@ -48,7 +48,6 @@ export default function Header() {
 
   const menuHandler = () => {
     setMenuOpen((prev) => !prev);
-    console.log(menuOpen);
   };
 
   return (

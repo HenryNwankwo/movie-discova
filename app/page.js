@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 
 export default function Home() {
   return (
-    <main className=''>
+    <main className='w-full h-auto max-w-6xl mx-auto relative'>
       <Header></Header>
       <HeroSection></HeroSection>
       <FeaturedMoviesSection></FeaturedMoviesSection>

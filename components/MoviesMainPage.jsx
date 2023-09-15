@@ -25,8 +25,6 @@ function MoviesMainPage({ id }) {
       .then((data) => {
         setMovieData(data);
         setLoading(false);
-        console.log('movie details:', movieData);
-        console.log('Data.results:', data);
       })
       .catch((error) => {
         toast.error('Unable to get movie details!', {
