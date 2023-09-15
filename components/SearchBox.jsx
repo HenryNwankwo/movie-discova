@@ -46,7 +46,6 @@ const SearchBox = () => {
     } else {
       setCardIsOpen(true);
     }
-    //searchedMovie.filter((movie) => movie.includes(e.target.value));
   };
 
   return (
@@ -66,22 +65,28 @@ const SearchBox = () => {
         {cardIsOpen ? (
           <article className='mbox-search-dropdown' ref={movieCardRef}>
             {loading && (
-              <div className='w-full h-full text-black'>
-                Search result loading
-              </div>
+              <d className='w-full flex items-center justify-center text-slate-600 text-center p-4'>
+                Searching...
+              </d>
             )}
-            {searchedMovie.map((movie) => (
-              <div className='mbox-search-movie-card' key={movie.id}>
-                <Image
-                  src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                  alt=''
-                  width={50}
-                  height={50}
-                  className='mr-3'
-                />
-                <p className='text-xs md:text-sm'>{movie.title}</p>
-              </div>
-            ))}
+            {searchedMovie.length > 0 ? (
+              searchedMovie.map((movie) => (
+                <div className='mbox-search-movie-card' key={movie.id}>
+                  <Image
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    alt=''
+                    width={50}
+                    height={50}
+                    className='mr-3'
+                  />
+                  <p className='text-xs md:text-sm'>{movie.title}</p>
+                </div>
+              ))
+            ) : (
+              <p className='w-full flex items-center justify-center text-slate-600 text-center p-4'>
+                Searched movie not found!
+              </p>
+            )}
           </article>
         ) : null}
       </form>
