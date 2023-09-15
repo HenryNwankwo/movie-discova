@@ -10,7 +10,7 @@ const SearchBox = () => {
   const [searchedMovie, setSearchedMovie] = useState([]);
   const [loading, setLoading] = useState(true);
   const [cardIsOpen, setCardIsOpen] = useState(false);
-  const movieCardRef = useRef(null);
+  const dropdownRef = useRef(null);
   const router = useRouter();
   const API_KEY = process.env.NEXT_PUBLIC_DB_API_KEY;
   const searchURL = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${API_KEY}`;
@@ -57,6 +57,18 @@ const SearchBox = () => {
     }
   };
 
+  //Closes dropdown on clicked outside
+  useEffect(() => {
+    const clickHandler = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setCardIsOpen(false);
+      }
+    };
+    window.addEventListener('click', clickHandler);
+    return () => {
+      window.removeEventListener('click', clickHandler);
+    };
+  });
   return (
     <article className='mbox-search-group'>
       <form className='relative'>
@@ -75,7 +87,7 @@ const SearchBox = () => {
         {/* Search dropdown */}
 
         {cardIsOpen ? (
-          <article className='mbox-search-dropdown' ref={movieCardRef}>
+          <article className='mbox-search-dropdown' ref={dropdownRef}>
             {loading && (
               <d className='w-full flex items-center justify-center text-slate-600 text-center p-4'>
                 Searching...

@@ -231,10 +231,10 @@
   @apply w-full md:w-72 h-72 px-2 lg:ml-4;
 }
 .top-rated-btn {
-  @apply p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white w-full mb-2 md:mb-0 text-center;
+  @apply p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white w-full md:w-64 md:mr-2 mb-2 md:mb-0  text-center;
 }
 .award-nomination-btn {
-  @apply flex items-center justify-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4 w-full text-center;
+  @apply flex items-center justify-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4 w-full  text-center;
 }
 
 .movie-preview-group {
