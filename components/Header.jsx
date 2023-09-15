@@ -18,10 +18,10 @@ export default function Header() {
         setMenuOpen((prev) => (prev === true ? false : prev));
       }
     };
-    window.addEventListener('mousedown', clickOutsideHandler);
+    window.addEventListener('click', clickOutsideHandler);
 
     return () => {
-      window.removeEventListener('mousedown', clickOutsideHandler);
+      window.removeEventListener('click', clickOutsideHandler);
     };
   }, []);
 
