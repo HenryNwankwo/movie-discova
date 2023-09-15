@@ -166,7 +166,7 @@
   @apply flex max-w-[100vw] max-h-screen overflow-y-scroll;
 }
 .movies-page-main {
-  @apply w-full p-4 pl-14 lg:pl-52;
+  @apply w-full h-auto p-4 pl-14 lg:pl-52;
 }
 
 /* ==================
@@ -174,7 +174,7 @@
 ===================*/
 
 .movies-page-aside {
-  @apply w-12 lg:w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed;
+  @apply w-12 lg:w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed overflow-y-auto;
 }
 .movies-page-logo-group {
   @apply flex items-center w-full px-4;
@@ -201,40 +201,40 @@
 ==============================*/
 
 .movie-info-group {
-  @apply w-full flex justify-between text-neutral-800 text-sm font-semibold px-2 py-1;
+  @apply w-full flex flex-col lg:flex-row text-neutral-800 text-sm font-semibold px-2 py-1;
 }
 .movie-info-group > span {
   @apply block;
 }
 .small-dot {
-  @apply block w-1.5 h-1.5 mx-3 rounded-full bg-neutral-800;
+  @apply hidden sm:block w-1.5 h-1.5 mx-3 rounded-full bg-neutral-800;
 }
 .movie-info {
-  @apply flex items-center;
+  @apply flex flex-col sm:flex-row  sm:items-center text-xs;
 }
 .category-tag {
   @apply w-fit rounded-full text-xs mx-1.5 px-3 py-1 border-[1px] border-pink-600 text-pink-600;
 }
 .movie-rating {
-  @apply flex;
+  @apply flex mt-2 lg:mt-0;
 }
 .movie-description-ad-group {
-  @apply flex;
+  @apply flex flex-col md:flex-row h-auto mb-4;
 }
 .movie-description-group {
-  @apply text-sm my-2 p-3 text-neutral-600 w-8/12;
+  @apply text-sm my-2 p-3 text-neutral-600 w-full md:w-8/12;
 }
 .names-group {
   @apply flex my-6;
 }
 .movie-ad-group {
-  @apply w-72 h-72 px-2 lg:ml-4;
+  @apply w-full md:w-72 h-72 px-2 lg:ml-4;
 }
 .top-rated-btn {
-  @apply p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white;
+  @apply p-2 px-4 bg-pink-600 hover:bg-pink-500 rounded-md text-white w-full mb-2 md:mb-0 text-center;
 }
 .award-nomination-btn {
-  @apply flex items-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4;
+  @apply flex items-center justify-center border-[1px] border-neutral-600 bg-white hover:bg-pink-50 rounded-md p-2 px-4 w-full text-center;
 }
 
 .movie-preview-group {
@@ -247,5 +247,5 @@
   @apply bg-white bg-opacity-30 flex items-center justify-center w-10 h-10 lg:w-20 lg:h-20 rounded-full;
 }
 .trailer-image {
-  @apply rounded-3xl w-full h-36 lg:h-96 flex justify-center items-center;
+  @apply rounded-3xl w-full h-36 sm:h-48 md:h-64 lg:h-96 flex justify-center items-center;
 }

@@ -22,7 +22,7 @@ function MovieCast({ movieDetails }) {
             Tom Cruise, Jennifer Connelly, Miles Teller
           </span>
         </p>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between flex-col md:flex-row'>
           <button className='top-rated-btn'>Top rated movie #65</button>
           <button className='award-nomination-btn'>
             Awards 9 nomination

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'MovieBox -',
   description:
-    'A movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies.',
+    'Search for movies, view details about them, and save your favorite movies.',
 };
 
 export default function RootLayout({ children }) {
