@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { BiSearch } from 'react-icons/bi';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const SearchBox = () => {
-  const [searchError, setSearchError] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const [searchedMovie, setSearchedMovie] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ const SearchBox = () => {
   const router = useRouter();
   const API_KEY = process.env.NEXT_PUBLIC_DB_API_KEY;
   const searchURL = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${API_KEY}`;
-  console.log('Initial loading: ', loading);
+
   //fetching the searched movie
   const getMovie = () => {
     fetch(searchURL)
@@ -27,11 +27,18 @@ const SearchBox = () => {
       .then((data) => {
         setSearchedMovie(data.results);
         setLoading(false);
-        console.log('After data loading: ', loading);
-        console.log(data);
-        console.log('This is searchemovie::', searchedMovie);
       })
       .catch((error) => {
+        toast.error('A search error has occured!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
         console.error('Error fetching data: ', error);
       });
   };

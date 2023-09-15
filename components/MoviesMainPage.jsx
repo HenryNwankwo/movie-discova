@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import MovieInfoGroup from './MovieInfoGroup';
 import MoviePreview from './MoviePreview';
 import Loader from './Loader';
+import { toast } from 'react-toastify';
 
 function MoviesMainPage({ id }) {
   const [movieData, setMovieData] = useState({});
@@ -28,6 +29,16 @@ function MoviesMainPage({ id }) {
         console.log('Data.results:', data);
       })
       .catch((error) => {
+        toast.error('Unable to get movie details!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
         console.log('Error Message: ', error);
       });
   };

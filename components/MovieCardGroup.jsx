@@ -2,6 +2,7 @@
 import Loader from './Loader';
 import MovieCard from './MovieCard';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 function MovieCardGroup() {
   const [topMovies, setTopMovies] = useState([]);
@@ -22,6 +23,17 @@ function MovieCardGroup() {
         setLoading(false);
       })
       .catch((error) => {
+        toast.error('Unable to load movies!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+
         console.error('Error occured!', error);
       });
   };
