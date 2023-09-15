@@ -1,48 +1,68 @@
 'use client';
-import { useState } from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { BiSearch } from 'react-icons/bi';
 
 const SearchBox = () => {
   const [searchError, setSearchError] = useState('');
   const [searchValue, setSearchValue] = useState('');
+  const [searchedMovie, setSearchedMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [cardIsOpen, setCardIsOpen] = useState(false);
+  const movieCardRef = useRef(null);
   const API_KEY = process.env.NEXT_PUBLIC_DB_API_KEY;
   const searchURL = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${API_KEY}`;
 
-  // validating and handling form input
+  //fetching the searched movie
+  const getMovie = () => {
+    fetch(searchURL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response is not ok!');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSearchedMovie(data);
+        setLoading(true);
+        console.log(data);
+        console.log('This is searchemovie::', searchedMovie);
+      })
+      .catch((error) => {
+        console.error('Error fetching data: ', error);
+      });
+  };
 
-  const formik = useFormik({
-    initialValues: {
-      search: '',
-    },
-    validationSchema: Yup.object({
-      search: Yup.string().required('Movie name is required!'),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      setSearchValue(values.search);
-    },
-  });
+  useEffect(() => {
+    getMovie();
+  }, [searchValue]);
+
+  //HAndling input change
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    //searchedMovie.filter((movie) => movie.includes(e.target.value));
+  };
 
   return (
     <article className='mbox-search-group'>
-      <form onSubmit={formik.handleSubmit} className='mbox-search-form'>
+      <form className='relative'>
         <input
           type='text'
           name='search'
           id='search'
           className='mbox-search-input'
           placeholder='What do you want to watch?'
-          onChange={formik.handleChange}
-          value={formik.values.search}
+          onChange={handleChange}
         />
-        <button type='submit' className='mbox-search-input-label'>
+        <label htmlFor='search' className='mbox-search-input-label'>
           <BiSearch className='text-lg' />{' '}
-        </button>
-        {formik.touched.search && formik.errors.search
-          ? setSearchError(formik.errors.search)
-          : null}
+        </label>
+        <article className='mbox-search-dropdown' ref={movieCardRef}>
+          <div className='mbox-search-movie-card'>
+            <Image src='' alt='' width={20} height={20} className='mr-2' />
+            <p className='text-black'>Jack Reacher</p>
+          </div>
+        </article>
       </form>
     </article>
   );

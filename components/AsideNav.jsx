@@ -12,7 +12,7 @@ function AsideNav() {
           alt='Movies Home'
           className='mr-3'
         />
-        <span className=''>Home</span>
+        <span className='hidden lg:flex'>Home</span>
       </Link>
       <Link href='#' className='nav-links'>
         <Image
@@ -22,7 +22,7 @@ function AsideNav() {
           alt='Movies'
           className='mr-3'
         />
-        <span className=''>Movies</span>
+        <span className='hidden lg:flex'>Movies</span>
       </Link>
       <Link href='#' className='nav-links'>
         <Image
@@ -32,7 +32,7 @@ function AsideNav() {
           alt='TV Series'
           className='mr-3'
         />
-        <span className=''>TV Series</span>
+        <span className='hidden lg:flex'>TV Series</span>
       </Link>
       <Link href='#' className='nav-links'>
         <Image
@@ -42,7 +42,7 @@ function AsideNav() {
           alt='Upcoming'
           className='mr-3'
         />
-        <span className=''>Upcoming</span>
+        <span className='hidden lg:flex'>Upcoming</span>
       </Link>
     </nav>
   );

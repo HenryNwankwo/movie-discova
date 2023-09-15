@@ -12,7 +12,7 @@ function AsideHeader() {
           height={30}
           className='mr-3'
         />{' '}
-        <span className='flex font-semibold text-lg'>MovieBox</span>
+        <span className='hidden lg:flex font-semibold text-lg'>MovieBox</span>
       </Link>
     </header>
   );

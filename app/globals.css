@@ -24,7 +24,7 @@
 }
 
 .mbox-search-group > * {
-  @apply flex items-center justify-center text-white w-full sm:w-64 md:w-80 lg:w-96 sm:mr-9 md:mr-20 lg:mr-40;
+  @apply relative flex items-center justify-center text-white w-full sm:w-64 md:w-80 lg:w-96 sm:mr-9 md:mr-20 lg:mr-40;
 }
 .mbox-search-input {
   @apply flex items-center w-full rounded bg-transparent py-1 px-3 pr-10 outline-2 outline outline-white -ml-10;
@@ -34,6 +34,12 @@
 }
 .mbox-search-input-label {
   @apply flex items-center justify-center -m-7;
+}
+.mbox-search-dropdown {
+  @apply w-full min-h-[50px] flex flex-col items-center justify-center bg-white rounded-lg py-2 absolute left-0 top-10;
+}
+.mbox-search-movie-card {
+  @apply w-full h-fit my-0.5 p-2 flex items-center hover:bg-slate-100 hover:cursor-pointer;
 }
 .mbox-sign-in-group {
   @apply flex items-center justify-center text-white mt-5 sm:mt-0;
@@ -157,7 +163,7 @@
 *******************************************************************************/
 
 .movies-page-container {
-  @apply flex max-w-[100vw];
+  @apply flex max-w-[100vw] max-h-screen overflow-y-scroll;
 }
 .movies-page-main {
   @apply w-full p-4 pl-52;
@@ -168,20 +174,20 @@
 ===================*/
 
 .movies-page-aside {
-  @apply w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed;
+  @apply w-12 lg:w-2/12 bg-white z-10 border-r-[1px] rounded-tr-3xl rounded-br-3xl border-neutral-400 h-screen max-h-screen py-5 fixed;
 }
 .movies-page-logo-group {
   @apply flex items-center w-full px-4;
 }
 .movies-page-nav {
-  @apply py-3 my-2 mb-3;
+  @apply py-3 my-2 mb-3 w-full;
 }
 .nav-links {
-  @apply flex items-center px-8 py-4 text-sm font-semibold text-neutral-500 hover:bg-pink-100 hover:text-pink-600 hover:border-r-4 hover:border-pink-600;
+  @apply flex items-center justify-center lg:justify-start px-1 lg:px-8 py-4 text-sm font-semibold text-neutral-500 hover:bg-pink-100 hover:text-pink-600 hover:border-r-4 hover:border-pink-600;
 }
 
 .movies-page-quiz-group {
-  @apply rounded-xl w-5/6 mx-auto h-auto px-3 p-2 my-2 flex flex-col bg-pink-50 border-2 border-pink-200;
+  @apply rounded-xl w-5/6 mx-auto h-auto px-3 p-2 my-2 hidden lg:flex flex-col bg-pink-50 border-2 border-pink-200;
 }
 .quiz-btn {
   @apply w-fit mx-auto px-4 py-2 mt-2 justify-self-center  text-pink-600 bg-pink-200 rounded-full text-xs font-semibold;

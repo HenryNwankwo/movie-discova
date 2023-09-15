@@ -18,7 +18,7 @@ function layout({ children }) {
             alt='log out'
             className='mr-3'
           />{' '}
-          <span>Log out</span>
+          <span className='hidden lg:flex'>Log out</span>
         </button>
       </aside>
       <section className='movies-page-main'>{children}</section>
