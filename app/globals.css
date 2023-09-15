@@ -166,7 +166,7 @@
   @apply flex max-w-[100vw] max-h-screen overflow-y-scroll;
 }
 .movies-page-main {
-  @apply w-full p-4 pl-52;
+  @apply w-full p-4 pl-14 lg:pl-52;
 }
 
 /* ==================
@@ -238,14 +238,14 @@
 }
 
 .movie-preview-group {
-  @apply w-full h-auto flex items-center justify-center relative my-4;
+  @apply w-full lg:h-auto flex items-center justify-center relative my-4;
 }
 .watch-trailer-group {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col text-white items-center justify-center;
 }
 .trailer-play-btn {
-  @apply bg-white bg-opacity-30 flex items-center justify-center w-20 h-20 rounded-full;
+  @apply bg-white bg-opacity-30 flex items-center justify-center w-10 h-10 lg:w-20 lg:h-20 rounded-full;
 }
 .trailer-image {
-  @apply rounded-3xl w-full h-96 flex justify-center items-center;
+  @apply rounded-3xl w-full h-36 lg:h-96 flex justify-center items-center;
 }

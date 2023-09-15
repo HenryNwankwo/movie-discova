@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'MovieBox |',
+  title: 'MovieBox -',
   description:
     'A movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies.',
 };

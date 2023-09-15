@@ -13,7 +13,7 @@ function MoviePreview() {
       />
       <article className='watch-trailer-group'>
         <button className='trailer-play-btn'>
-          <FaPlay className='text-white text-4xl' />
+          <FaPlay className='text-white text-lg lg:text-4xl' />
         </button>
         <p className='mt-2'>Watch Trailer</p>
       </article>
