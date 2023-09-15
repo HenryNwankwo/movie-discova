@@ -36,8 +36,8 @@ function MoviesMainPage({ id }) {
   }, [id]);
 
   return loading ? (
-    <div className='w-full h-screen justify-center items-center bg-red-200'>
-      Loading...
+    <div className='w-full h-screen justify-center items-center'>
+      <p>Loading...</p>
     </div>
   ) : (
     <>

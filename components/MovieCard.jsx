@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import FavBtn from './FavBtn';
 
 function MovieCard({ id, poster, release_date, title }) {
+  const router = useRouter();
   const movie_release_date = new Date(release_date).getFullYear();
   return (
     <article data-testid='movie-card' className='mbox-movie-card'>
@@ -19,14 +21,15 @@ function MovieCard({ id, poster, release_date, title }) {
       <h6 data-testid='movie-release-date' className='mbox-movie-year'>
         {movie_release_date}
       </h6>
-      <Link
-        href={`/movies/${id}`}
-        className='hover:underline hover:text-blue-600'
+
+      <p
+        data-testid='movie-title'
+        className='mbox-movie-title hover:underline hover:text-blue-600 hover:cursor-pointer'
+        onClick={() => router.push(`/movies/${id}`)}
       >
-        <p data-testid='movie-title' className='mbox-movie-title'>
-          {title}
-        </p>
-      </Link>
+        {title}
+      </p>
+
       <div className='mbox-movie-ratings'>
         <p className='flex items-center'>
           <Image
