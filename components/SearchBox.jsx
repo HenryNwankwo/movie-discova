@@ -12,7 +12,7 @@ const SearchBox = () => {
   const movieCardRef = useRef(null);
   const API_KEY = process.env.NEXT_PUBLIC_DB_API_KEY;
   const searchURL = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${API_KEY}`;
-
+  console.log('Initial loading: ', loading);
   //fetching the searched movie
   const getMovie = () => {
     fetch(searchURL)
@@ -23,8 +23,9 @@ const SearchBox = () => {
         return response.json();
       })
       .then((data) => {
-        setSearchedMovie(data);
-        setLoading(true);
+        setSearchedMovie(data.results);
+        setLoading(false);
+        console.log('After data loading: ', loading);
         console.log(data);
         console.log('This is searchemovie::', searchedMovie);
       })
@@ -40,6 +41,11 @@ const SearchBox = () => {
   //HAndling input change
   const handleChange = (e) => {
     setSearchValue(e.target.value);
+    if (e.target.value == '') {
+      setCardIsOpen(false);
+    } else {
+      setCardIsOpen(true);
+    }
     //searchedMovie.filter((movie) => movie.includes(e.target.value));
   };
 
@@ -57,12 +63,27 @@ const SearchBox = () => {
         <label htmlFor='search' className='mbox-search-input-label'>
           <BiSearch className='text-lg' />{' '}
         </label>
-        <article className='mbox-search-dropdown' ref={movieCardRef}>
-          <div className='mbox-search-movie-card'>
-            <Image src='' alt='' width={20} height={20} className='mr-2' />
-            <p className='text-black'>Jack Reacher</p>
-          </div>
-        </article>
+        {cardIsOpen ? (
+          <article className='mbox-search-dropdown' ref={movieCardRef}>
+            {loading && (
+              <div className='w-full h-full text-black'>
+                Search result loading
+              </div>
+            )}
+            {searchedMovie.map((movie) => (
+              <div className='mbox-search-movie-card' key={movie.id}>
+                <Image
+                  src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                  alt=''
+                  width={50}
+                  height={50}
+                  className='mr-3'
+                />
+                <p className='text-xs md:text-sm'>{movie.title}</p>
+              </div>
+            ))}
+          </article>
+        ) : null}
       </form>
     </article>
   );
