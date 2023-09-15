@@ -3,6 +3,7 @@ import MovieCast from './MovieCast';
 import { useEffect, useState } from 'react';
 import MovieInfoGroup from './MovieInfoGroup';
 import MoviePreview from './MoviePreview';
+import Loader from './Loader';
 
 function MoviesMainPage({ id }) {
   const [movieData, setMovieData] = useState({});
@@ -36,8 +37,8 @@ function MoviesMainPage({ id }) {
   }, [id]);
 
   return loading ? (
-    <div className='w-full h-screen justify-center items-center'>
-      <p>Loading...</p>
+    <div className='w-full h-screen flex justify-center items-center'>
+      <Loader loadingStatus={loading}></Loader>
     </div>
   ) : (
     <>

@@ -1,4 +1,5 @@
 'use client';
+import Loader from './Loader';
 import MovieCard from './MovieCard';
 import { useEffect, useState } from 'react';
 
@@ -31,7 +32,7 @@ function MovieCardGroup() {
 
   return loading ? (
     <div className='w-full h-[500px] flex items-center justify-center'>
-      <p className='text-center w-full'>Loading movies...</p>
+      <Loader loadingStatus={loading}></Loader>
     </div>
   ) : (
     <div className='mbox-movies-card-group'>
