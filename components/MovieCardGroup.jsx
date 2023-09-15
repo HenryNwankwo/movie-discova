@@ -1,27 +1,39 @@
 'use client';
-import axios from 'axios';
 import MovieCard from './MovieCard';
 import { useEffect, useState } from 'react';
 
 function MovieCardGroup() {
   const [topMovies, setTopMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
   const API_KEY = process.env.NEXT_PUBLIC_DB_API_KEY;
   const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
 
+  const getMovies = () => {
+    fetch(URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response is not ok!');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setTopMovies(data.results.slice(0, 10));
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error occured!', error);
+      });
+  };
+
   useEffect(() => {
-    async function fetchMovies() {
-      try {
-        const resp = await axios.get(URL);
-        setTopMovies(resp.data.results.slice(0, 10));
-        
-      } catch (error) {
-        console.error('Error occured!');
-      }
-    }
-    fetchMovies();
+    getMovies();
   }, []);
 
-  return (
+  return loading ? (
+    <div className='w-full h-[500px] flex items-center justify-center'>
+      <p className='text-center w-full'>Loading movies...</p>
+    </div>
+  ) : (
     <div className='mbox-movies-card-group'>
       {topMovies.map((movie) => (
         <MovieCard
