@@ -14,7 +14,11 @@ export default function Header() {
   // on click outside
   useEffect(() => {
     const clickOutsideHandler = (e) => {
-      if (headerNavRef.current && !headerNavRef.current.contains(e.target)) {
+      if (
+        headerNavRef.current &&
+        !headerNavRef.current.contains(e.target) &&
+        !menuRef.current.contains(e.target)
+      ) {
         setMenuOpen((prev) => (prev === true ? false : prev));
       }
     };
