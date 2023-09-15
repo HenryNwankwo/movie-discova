@@ -163,10 +163,10 @@
 *******************************************************************************/
 
 .movies-page-container {
-  @apply flex max-w-6xl max-h-screen overflow-y-scroll mx-auto;
+  @apply flex w-screen max-w-7xl max-h-screen overflow-y-scroll mx-auto;
 }
 .movies-page-main {
-  @apply w-full max-w-6xl h-auto p-4 pl-14 lg:pl-56;
+  @apply w-full max-w-7xl h-auto p-4 pl-14 lg:pl-56;
 }
 
 /* ==================
